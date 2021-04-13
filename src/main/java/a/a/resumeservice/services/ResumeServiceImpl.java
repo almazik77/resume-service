@@ -42,13 +42,15 @@ public class ResumeServiceImpl implements ResumeService {
     }
 
     @Override
-    public void deleteById(String userId, String resumeId) {
+    public boolean deleteById(String userId, String resumeId) {
         Optional<Resume> resumeCandidate = resumeRepository.findById(resumeId);
         if (resumeCandidate.isPresent()) {
             if (resumeCandidate.get().getOwner().getId().equals(userId)) {
                 resumeRepository.deleteById(resumeId);
+                return true;
             }
         }
+        return false;
     }
 
     @Override

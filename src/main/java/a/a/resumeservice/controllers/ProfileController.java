@@ -4,6 +4,7 @@ import a.a.resumeservice.dto.UserDto;
 import a.a.resumeservice.security.details.UserDetailsImpl;
 import a.a.resumeservice.services.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Profile;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@Profile("mvc")
 @RequestMapping("/profile")
 @RequiredArgsConstructor
 public class ProfileController {

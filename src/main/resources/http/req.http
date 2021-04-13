@@ -1,0 +1,32 @@
+POST http://localhost:8080/rest/signIn
+Content-Type: application/json
+
+
+{
+  "email": "musin.almaz12345@gmail.com",
+  "password": "123"
+}
+
+###
+
+GET http://localhost:8080/signIn
+
+###
+
+PUT http://localhost:8080/rest/resume/607626e8d9d84a01bce76178
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MDc1YzNjMWEyYzYyODE0NTMyNjc3NjYiLCJlbWFpbCI6Im11c2luLmFsbWF6MTIzNDVAZ21haWwuY29tIn0.rwNE9ls_r3jq83HA1gq69JNjYE9SkdGMD9E3BBx67Z0
+Content-Type: application/json
+
+{
+  "id": "607626e8d9d84a01bce76178",
+  "name": "name3",
+  "about": "about ",
+  "workExperience": "workExperience",
+  "education": "education",
+  "skills": "skills",
+  "references": "references"
+}
+
+###
+DELETE http://localhost:8080/rest/resume/6075ffcddcb4d14da4189fac
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MDc1YzNjMWEyYzYyODE0NTMyNjc3NjYiLCJlbWFpbCI6Im11c2luLmFsbWF6MTIzNDVAZ21haWwuY29tIn0.rwNE9ls_r3jq83HA1gq69JNjYE9SkdGMD9E3BBx67Z0

@@ -9,7 +9,7 @@ public interface ResumeService {
 
     ResumeDto getById(String resumeId);
 
-    void deleteById(String userId, String resumeId);
+    boolean deleteById(String userId, String resumeId);
 
     ResumeDto update(String userId, String resumeId, ResumeDto resumeDto);
 

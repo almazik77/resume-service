@@ -5,6 +5,7 @@ import a.a.resumeservice.dto.UserDto;
 import a.a.resumeservice.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +14,7 @@ import javax.validation.Valid;
 @Controller
 @RequestMapping("/signUp")
 @RequiredArgsConstructor
+@Profile("mvc")
 public class SignUpController {
     @Autowired
     private final UserService userService;
