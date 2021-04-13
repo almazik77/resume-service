@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Profile</title>
+</head>
+<div th:insert="header :: header"></div>
+
+<body class="container">
+<form th:action="@{/resume/{resume-id}(resume-id=${resumeDto.id})}" th:method="post" th:object="${resumeDto}">
+    <div class="form-group">
+        <label for="name"> name</label>
+        <input name="name" type="text" id="name" class="form-control"
+               th:field="*{name}">
+        <label for="about">about </label>
+        <input name="about" type="text" id="about" class="form-control"
+               th:field="*{about}">
+        <label for="workExperience">workExperience </label>
+        <input name="workExperience" type="text" id="workExperience" class="form-control"
+               th:field="*{workExperience}">
+        <label for="education">education </label>
+        <input name="education" type="text" id="education" class="form-control"
+               th:field="*{education}">
+        <label for="skills">skills </label>
+        <input name="skills" type="text" id="skills" class="form-control"
+               th:field="*{skills}">
+        <label for="references">references </label>
+        <input name="references" type="text" id="references" class="form-control"
+               th:field="*{references}">
+    </div>
+        <input type="submit" placeholder="dobavit'" class="btn btn-primary">
+</form>
+
+</body>
+</html>

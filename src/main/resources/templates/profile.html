@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Profile</title>
+</head>
+<div th:insert="header :: header"></div>
+<body class="container">
+<div>
+    <div th:text="${profileInfo.firstName}"></div>
+    <div th:text="${profileInfo.lastName}"></div>
+    <div th:text="${profileInfo.email}"></div>
+    <div th:if="${profileInfo.resumeList == null or profileInfo.resumeList.empty}">
+        <span class="text-info">No resume</span>
+    </div>
+    <ul>
+        <li th:each="resume : ${profileInfo.resumeList}">
+            <a th:href="@{/resume/{resume-id}(resume-id=${resume.id})}">
+                <span th:text="${resume.name}"> Name </span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<form th:action="@{/logout}" method="post">
+    <input type="submit" th:text="logout">
+</form>
+</body>
+</html>
